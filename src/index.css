@@ -14,13 +14,59 @@
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite
   --animate-fade-in: fade-in 0.7s ease-out forwards;
   --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
   --animate-meteor: meteor 5s linear infinite;
                    
 }
 
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-subtle{
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity : 0.8;
+  }
+}
+
+@keyframes fade-in{
+  from {
+    opacity:0;
+    transform: translateY(20px);
+
+  }
+  to {
+    opacity:1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes meteor {
+    0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100%{
+    transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+  }
+}
 
 @layer base{
   :root{
@@ -65,7 +111,7 @@
 
 
 /*tailwind utility classes*/
-@@utility container {
+@utility container {
   margin-inline: auto
   padding-inline: 2rem
 
@@ -73,9 +119,6 @@
     max-width: 640px;
   }
 
-  @media (width>=640px){
-    max-width: 640px;
-  }
 
   @media (width>=768px){
     max-width: 768px;
@@ -85,7 +128,7 @@
     max-width: 1280px;
   }
 
-  @media (width>=1400){
+  @media (width>=1400px){
     max-width: 1400px;
   }
 
@@ -104,7 +147,7 @@
 }
 @utility gradient-border {
   @apply relative rounded-md;
-  background: linear-gradient (to right, , hsl(var(--card)))
+  background: linear-gradient (to right, hsl(var(--primary)), hsl(var(--card)));
   background-clip: padding-box;
   border: 1px solid transparent;
 }
@@ -116,7 +159,7 @@
 
 /* can change bg-white to diff colors for star later (green?)*/
 @utility star {
-  @apply absolute rounded-full bg-white; 
+  @apply absolute rounded-full bg-emerald-400; 
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4)
 }
 
