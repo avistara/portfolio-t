@@ -82,7 +82,7 @@
     --background: 210 47% 4%;
     --foreground: 222 40% 91%;
 
-    --card: 222 47% 8%;
+    --card: 222 47% 6%;
 
     --primary: 160 84% 30%;
     --primary-foreground: 213 31% 91%;
@@ -132,9 +132,23 @@
 }
 
 @utility card-hover {
-  @apply transition-transform duration-300 hover:shadow-lg;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  @apply bg-card transition-transform duration-300 hover:scale-[1.02];
+
+  box-shadow: 0 4px 12px hsl(var(--primary) / 0.3);
+
+  .dark & {
+    box-shadow: 0 0 8px hsl(var(--primary) / 0.2);
+  }
+
+  &:hover {
+    box-shadow: 0 6px 18px hsl(var(--primary) / 0.45);
+  }
+
+  .dark &:hover {
+    box-shadow: 0 0 24px hsl(var(--primary) / 0.6);
+  }
 }
+
 @utility gradient-border {
   @apply relative rounded-md;
   background: linear-gradient (to right, hsl(var(--primary)), hsl(var(--card)));
