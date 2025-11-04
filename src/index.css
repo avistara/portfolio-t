@@ -159,7 +159,7 @@
 
 /* can change bg-white to diff colors for star later (green?)*/
 @utility star {
-  @apply absolute rounded-full bg-emerald-400; 
+  @apply absolute rounded-full bg-white; 
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4)
 }
 
