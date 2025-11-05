@@ -1,2 +1,3 @@
-1:43, starting skills section
+1:56, projects
+finished footer
 https://www.youtube.com/watch?v=ifOJ0R5UQOc
